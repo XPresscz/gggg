@@ -11,15 +11,6 @@ Copyright © 2017 X-Press
 */
 
 /* ------------------------------- MAIN ------------------------------- */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-
-body {
-  background:url('http://i.imgur.com/iZEXtgk.jpg') center center no-repeat fixed;
-}
-
-.room-background {
-  background:url('http://i.imgur.com/iZEXtgk.jpg') !important;
-}
 
 /* ----------------------------- APP MENU ----------------------------- */
 

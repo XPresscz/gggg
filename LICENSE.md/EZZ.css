@@ -1,0 +1,808 @@
+/*
+
+Auteur:   X-Press
+Créé:  1.7.2017
+Pour:      GlobalPlug.cz (https://plug.dj/globalplug-cz)
+Theme:    Original
+Remarque:     !!!DO NOT USE THIS CSS WITHOUT PERMISSION FROM THE AUTOR!!
+
+Copyright © 2017 X-Press
+
+*/
+
+/* ------------------------------- MAIN ------------------------------- */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  background:url('http://i.imgur.com/iZEXtgk.jpg') center center no-repeat fixed;
+}
+
+.room-background {
+  background:url('http://i.imgur.com/iZEXtgk.jpg') !important;
+}
+
+/* ----------------------------- APP MENU ----------------------------- */
+
+#app-menu {
+  border:none;
+  box-shadow:none;
+  background:none;
+}
+
+#app-menu.in-room {
+  top:150px;
+  height:54px;
+  box-shadow:none;
+  border-radius:0 20px 20px 0;
+}
+
+#app-menu.open {
+  height:654px;
+}
+
+#app-menu .button {
+  background:#2980b9;
+  transition:0.25s;
+  height:54px;
+  position:absolute;
+  border-radius:0 20px 20px 0;
+}
+
+#app-menu .button::after {
+  content:"\f054 \f054";
+  position:absolute;
+  right:54px;
+  top:40%;
+  font-family:FontAwesome;
+  opacity:0;
+  transition:all 0.5s;
+}
+
+#app-menu .button:hover::after {
+  opacity:1;
+}
+
+#app-menu.open .button:hover::after {
+  opacity:0;
+}
+
+#app-menu.open .button {
+  border-radius:0 20px 0 0;
+}
+
+#app-menu.in-room .button:hover {
+  left:25px;
+}
+
+#app-menu.open .button:hover {
+  left:0px;
+}
+
+#app-menu .button:hover {
+  background:#3498db;
+}
+
+#app-menu .list {
+  background:rgba(0,0,0,.5);
+  height:600px !important;
+  transition:none;
+  box-shadow:inset 0 -26px 0 #2980b9;
+  border-radius:0 0 26px 0;
+}
+
+#app-menu .list:after {
+  content:"Made by X-Press.";
+  color:#fff;
+  font-size:10pt;
+  position:absolute;
+  bottom:5px;
+  left:20px;
+  font-weight:700;
+}
+
+#app-menu .list .item {
+  box-shadow:none;
+  transition:0.3s;
+}
+
+#app-menu .list .item:hover {
+  background:#222;
+  box-shadow:inset 3px 0 0 #333;
+}
+
+#app-menu .list .item span {
+  top:16px;
+}
+
+#app-menu .list .rcsunload,
+#app-menu .list .logout {
+  background:none !important;
+  transition:0.3s;
+  border:none !important;
+  color:#fff;
+  left:0 !important;
+  right:0 !important;
+  width:180px !important;
+}
+
+#app-menu .list .rcsunload {
+  bottom:100px !important;
+}
+
+#app-menu .list .rcsunload:hover {
+  background:rgba(41, 128, 185,0.2) !important;
+  box-shadow:inset 3px 0 0 #2980b9;
+}
+
+#app-menu .list .logout {
+  bottom:53px !important;
+}
+
+#app-menu .list .logout:hover {
+  background:rgba(192, 57, 43,0.2) !important;
+  box-shadow:inset 3px 0 0 #c0392b;
+}
+
+/* ----------------------------- APP HEADER ----------------------------- */
+
+.app-header {
+  background:rgba(0,0,0,.7);
+  border-radius:0 0 0 45px;
+  overflow:visible;
+}
+
+#room-bar {
+  transition:.3s;
+  left:40px;
+}
+
+#room-bar #room-host .dark-label {
+  color:#021aef;
+}
+
+#room-bar #room-name,
+#room-bar #room-host {
+  transition:.3s;
+  opacity:1;
+}
+
+#room-bar:hover #room-name,
+#room-bar:hover #room-host {
+  opacity:0;
+}
+
+#room-bar .favorite i {
+  transition:top .3s;
+}
+
+#room-bar:hover .favorite i {
+  top:-8px;
+}
+
+#room-bar::before {
+  transition:.3s;
+  content:"INFORMACE";
+  font-size:18pt;
+  font-weight:bold;
+  position:absolute;
+  left:50px;
+  top:0px;
+  opacity:0;
+}
+
+#room-bar:hover::before {
+  opacity:1;
+  top:10px;
+}
+
+#room-bar::after {
+  transition:all .3s;
+  content:"\f078";
+  font-family: FontAwesome;
+  position:absolute;
+  right:9px;
+  top:35%;
+  opacity:0;
+  font-size:14px;
+}
+
+#room-bar:hover::after {
+  opacity:1;
+  top:60%;
+}
+
+.app-header .bar-divider {
+  display:none;
+}
+
+#now-playing-dj .dark-label {
+  color:#3498db;
+}
+
+#volume .slider .circle {
+  background:#eee;
+}
+
+#volume .slider .line {
+  background:#2878ba;
+  border-radius:8px;
+  top:11px;
+  height:2px;
+}
+
+#history-button,
+#rs-skip-button {
+  background:#2980b9 !important;
+  box-shadow:none !important;
+  transition:.3s;
+}
+
+#history-button:hover,
+#rs-skip-button:hover {
+  background:#3498db !important;
+}
+
+#rs-skip-button {
+  right:54px !important;
+}
+
+/* APP HEADER > Links */
+
+/*ROOM INFO*/
+
+#room-settings {
+  background:rgba(0,0,0,.9);
+}
+
+#room-settings-menu {
+  display:none;
+}
+
+#room-settings .general-settings {
+  left:0 !important;
+  width:100% !important;
+}
+
+#room-settings .general-settings .option button.off {
+  background:rgba(41, 128, 185,.8);
+}
+
+#room-settings .general-settings .option button.on {
+  background:rgba(255,255,255,.18);
+}
+
+#room-settings .general-settings .option.enabled>button.off {
+  background:rgba(255,255,255,.18);
+}
+
+#room-settings .general-settings .option.enabled>button.on {
+  background:rgba(231, 76, 60,.8);
+}
+
+#room-settings .general-settings .option .dropdown {
+  background:rgba(255,255,255,.18);
+}
+
+#room-settings .general-settings .option .dropdown dt {
+  box-shadow:inset -39px 0 0 0 rgba(41, 128, 185,.8);
+}
+
+#room-settings .general-settings .option .dropdown dd {
+  background:rgba(255,255,255,.18);
+}
+
+#room-settings .general-settings .option .dropdown dd .row:hover {
+  background:#3498db;
+}
+
+#history-panel {
+  background:rgba(0,0,0,.7);
+  z-index:100;
+}
+
+.media-list .row {
+  transition:.3s;
+}
+
+.media-list .row:not(.selected):hover {
+  background:rgba(52, 152, 219,.2);
+  padding:10px 0;
+}
+
+.media-list .row.selected {
+  background:rgba(52, 152, 219,.3) !important;
+}
+
+.media-list .meta {
+  border:none;
+}
+
+.media-list .selected .actions {
+  background:#2980b9;
+  transition:.3s;
+  opacity:0;
+}
+
+.media-list:hover .actions {
+  opacity:1;
+}
+
+.media-list .selected .actions:hover {
+  background:#3498db;
+}
+
+.pop-menu {
+  background:#2c3e50 !important;
+}
+
+.pop-menu .bar {
+  background:#3498db;
+}
+
+.pop-menu .bar .bar-divider {
+  background:#ecf0f1;
+}
+
+.pop-menu ul {
+  background:#34495e;
+}
+
+.pop-menu li {
+  transition:.3s;
+}
+
+.pop-menu li:hover {
+  background:rgba(52, 152, 219,.2);
+}
+
+/* ---------------------------- HEADER PANEL ---------------------------- */
+
+#header-panel-bar {
+  background:transparent;
+}
+
+.header-panel-button {
+  border:none;
+  transition:.3s;
+  box-shadow:inset 0 -2px 0 #aaa;
+  width:69px !important;
+}
+
+#users-button{left:69px !important;}
+#waitlist-button{left:138px !important;}
+#friends-button{left:207px !important;}
+#rcs-appright-button{left:276px !important;}
+
+.header-panel-button:hover,
+.header-panel-button.selected {
+  background:rgba(0,0,0,.2);
+}
+
+.header-panel-button.selected {
+  box-shadow:inset 0 -2px 0 #2980b9, inset 0 0 10px #000;
+}
+
+.header-panel-button::after {
+  position:absolute;
+  font-family:FontAwesome;
+  font-size:20px;
+  content:"\f0d7";
+  bottom:-12px;
+  color:#2980b9;
+  transition:.3s;
+  opacity:0;
+  right:42%;
+}
+
+.header-panel-button.selected::after  {
+  opacity:1;
+}
+
+#users-button i,
+#waitlist-button i {
+  position:absolute;
+  left:-15px;
+  top:-15px;
+  float:none;
+  display:block;
+}
+
+#users-button:hover i,
+#waitlist-button:hover i {
+  display:none;
+}
+
+#users-button .bar-count,
+#waitlist-button .current {
+  width:69px;
+  position:absolute !important;
+  left:-35px !important;
+  top:-12px !important;
+  display:none;
+  margin:0 auto;
+}
+
+#users-button:hover .bar-count,
+#users-button .guest-count,
+#waitlist-button:hover .current,
+#waitlist-button:hover .count {
+  display:block;
+}
+
+#users-button.has-guests .bar-count {
+  top:-20px !important; 
+}
+
+#users-button .guest-count {
+  width:69px;
+  top:2px !important;
+  left:-35px !important;
+  position:absolute !important;
+  display:none !important;
+}
+
+#users-button:hover .guest-count {
+  display:block !important;
+}
+
+#waitlist-button .count {
+  display:none;
+  position:absolute;
+  left:5px;
+  top:-5px;
+}
+
+#friends-button.notify .request-count {
+  background:rgba(41, 128, 185,.5);
+  box-shadow:inset 0 0 0 1px #2980b9;
+}
+
+/* ------------------------------ APP RIGHT ------------------------------ */
+
+#room .app-right {
+  background:rgba(0,0,0,.7);
+}
+
+#chat-header,
+#user-lists .header,
+#waitlist .header,
+.friends .list-header {
+  box-shadow:inset 0 0 50px #000;
+}
+
+/* -------------------------------- CHAT -------------------------------- */
+
+#chat .cm:nth-child(2n+1),
+#chat .cm {
+  background:transparent;
+}
+
+#chat .cm.log {
+  background:rgba(41, 128, 185,.3);
+  padding:5px 0;
+  text-align:center;
+}
+
+#chat .cm.welcome {
+  background:rgba(41, 128, 185,.3);
+  color:#2980b9;
+  padding:5px;
+}
+
+#chat .rcs-delete {
+  background:#2980b9 !important;
+}
+
+#chat .rcs-delete:hover {
+  background:#3498db !important;
+}
+
+#chat .delete-button {
+  background:#c0392b;
+  padding:2px 10px;
+}
+
+#chat .delete-button:hover {
+  background:#e74c3c;
+}
+
+#chat .radiantimg-delete {
+  padding:2px 10px;
+  background:#2980b9;
+  right:70px;
+  top:5px;
+}
+
+#chat .radiantimg-delete:hover {
+  background:#3498db;
+}
+
+#chat .deletedChat {
+  color:#e74c3c;
+}
+
+#chat .from.dj .un, #chat .from.staff .un {
+  color:#3498db !important;
+}
+
+#chat .mention {
+  background:rgba(255,255,255,.1) !important;
+  border-left:3px solid #fff;
+}
+
+#chat .mention.role-host,
+#chat .mention.role-cohost,
+#chat .mention.role-manager,
+#chat .mention.role-bouncer {
+  background:rgba(41, 128, 185,.3) !important;
+  border-left:3px solid #2980b9;
+}
+
+#chat .msg .text .name,
+#chat .text a,
+#chat .text a:visited {
+  color:#3498db;
+}
+
+#chat .rs-log-green, #chat .rs-log-user-friend-join, #chat .rs-log-user-woot {
+  border-color:#2ecc71 !important;
+  color:#2ecc71 !important;
+  background:rgba(46, 204, 113,.2) !important;
+}
+
+#chat .rs-log-orange, #chat .rs-log-user-leave, #chat .rs-log-history,
+#chat .rs-log-red, #chat .rs-log-user-level1-join, #chat .rs-log-user-meh {
+  border-color:#e74c3c !important;
+  color:#e74c3c !important;
+  background:rgba(231, 76, 60,.1) !important;
+}
+
+#chat .rs-log-purple, #chat .rs-log-user-grab {
+  border-color:#9b59b6 !important;
+  color:#9b59b6 !important;
+  background:rgba(155, 89, 182,.2) !important;
+}
+
+#chat .rs-log-usrinfo, #chat .rs-log-aqua, #chat .rs-log-booth-alert, #chat .rs-log-user-join {
+  background:rgba(52, 152, 219,.2) !important;
+}
+
+#chat .moderation {
+  background:rgba(230, 126, 34,.1) !important;
+  color:#e67e22 !important;
+
+}
+
+#chat .moderation .un {
+  color:#e67e22 !important;
+}
+
+/* ------------------------- USER & WAIT LIST ------------------------- */
+
+#user-lists .header {
+  height:43px;
+}
+
+#user-lists .header .button {
+  transition:.3s;
+  top:1px;
+}
+
+#user-lists .header .button:hover {
+  box-shadow:inset 0 0 40px #000;
+}
+
+/*
+#user-lists .header .button.room:hover,
+#user-lists .header .button.staff:hover {
+  box-shadow:inset 0 0 40px #2980b9;
+}
+
+#user-lists .header .button.bans:hover,
+#user-lists .header .button.mutes:hover,
+#user-lists .header .button.ignored:hover {
+  box-shadow:inset 0 0 40px #e74c3c;
+}
+*/
+
+#user-lists .header .button.room.selected,
+#user-lists .header .button.staff.selected {
+  box-shadow:inset 0 0 30px #2980b9, inset 0 0 0 2px #2980b9;
+  border:none !important;
+}
+
+#user-lists .header .button.bans.selected,
+#user-lists .header .button.mutes.selected,
+#user-lists .header .button.ignored.selected {
+  box-shadow:inset 0 0 30px #e74c3c, inset 0 0 0 2px #e74c3c;
+  border:none !important;
+}
+
+#user-lists .list .user:not(:first-child):not(:last-child),
+#user-lists .list.staff .user {
+  padding:5px 0;
+  transition:0.1s;
+}
+
+#user-lists .list .user:hover {
+  border-left:3px solid #fff;
+  background:rgba(255,255,255,.1);
+}
+
+#user-lists .list .user.is-staff:hover,
+#user-lists .list.staff .user:hover {
+  border-left:3px solid #2980b9;
+  background:rgba(41, 128, 185,.3);
+}
+
+#user-lists .list.room .user i {
+  top:12px !important;
+}
+
+#user-lists .list.room .user .icon-woot,
+#user-lists .list.room .user i.icon.icon-meh {
+  top:5px !important;
+}
+#user-lists .list.room .user .icon-grab {
+  top:6px !important;
+}
+
+#user-lists .list .user .name {
+  top:10px !important;
+}
+
+#user-lists .list .user.is-staff .name {
+  color:#3498db !important;
+}
+
+#user-lists .list.staff .group {
+  background:rgba(41, 128, 185,.3);
+  border:none;
+  border-radius:80px;
+  margin-bottom:16px;
+}
+
+#waitlist .list .user {
+  background:transparent;
+  transition:.3s;
+}
+
+#waitlist .list .user:hover {
+  background:rgba(52, 152, 219,.2);
+}
+
+#waitlist .list .user .is-staff .name {
+  color:#3498db;
+}
+
+#user-rollover.is-staff .thumb, #waitlist .is-staff .thumb {
+  border-color:#3498db !important;
+}
+
+.thumb {
+  border-color:#2ecc71;
+}
+
+/* ---------------------------- VOTE ---------------------------- */
+} #vote { opacity: 0.90; } #woot { border-radius: 100px 0 0 100px ; } #woot .bottom { border-radius: 0 0 0 100px; } #woot.selected, #woot .bottom, #woot.crowd-response.disabled.active .bottom { background: linear-gradient(to top,#6FE514,rgba(74, 169, 0, 1) 100%); } #meh { border-radius: 0 100px 100px 0; } #meh .bottom { border-radius: 0 0 100px 0; } #meh.selected, #meh .bottom, #meh.crowd-response.disabled.active .bottom { background: linear-gradient(to top,#EA2A2A,rgba(189, 0, 0, 1) 100%); } #grab.selected, #grab .bottom, #grab.crowd-response.disabled.active .bottom { background: linear-gradient(to top,#AA74FE,rgba(102, 28, 217, 1) 100%); } #dj-button.is-wait, #dj-button.is-leave, #dj-button.is-quit, #dj-button.is-locked, #dj-button.is-full { opacity: 0.85; } #dj-button, #dj-button.is-leave { border-radius: 100px 100px 100px 100px; background: linear-gradient(to top,#3A3A3A,rgba(34, 34, 34, 1) 100%); } #dj-button .left { border-radius: 100px 100px 100px 100px; background: linear-gradient(to top,#14C0F3,rgba(0, 152, 196, 1) 100%); } #dj-button.is-leave .left { background: linear-gradient(to top,#F3653D,rgba(228, 61, 13, 1) 100%); }
+/* ---------------------------- FRIENDS ---------------------------- */
+
+.app-right .friends {
+  background:transparent;
+}
+
+.app-right .friends .list-header {
+  border:none;
+}
+
+.app-right .friends.has-requests .header::after {
+  content:"\f078";
+  font-family:FontAwesome;
+  position:absolute;
+  left:50%;
+  top:3px;
+}
+
+.app-right .friends.has-requests .header:hover::after {
+  opacity:0;
+}
+
+.app-right .friends.has-requests .list-header {
+  top:0;
+}
+
+.app-right .friends.has-requests .header {
+  background:rgba(41, 128, 185,.4);
+  transition:0.3s;
+  top:47px;
+  height:20px;
+}
+
+.app-right .friends.has-requests .header:hover {
+  background:#2980b9;
+  z-index:50;
+}
+
+.app-right .friends .header i {
+  display:none !important;
+}
+
+.app-right .friends.has-requests .header span:before {
+  content:"\f12a";
+  font-family:FontAwesome;
+  font-size: 16pt;
+  position:absolute;
+  left:-50px;
+  top:3px;
+  color:#fff;
+}
+
+.app-right .friends.has-requests .header span {
+  opacity:0;
+  transition:0.3s;
+  text-align:center;
+  left:80px;
+  top:12px;
+  padding:3px;
+}
+
+.app-right .friends.has-requests .header:hover span {
+  opacity:1;
+}
+
+.app-right .friends.has-requests .list {
+  top:75px;
+  transition:0.3s;
+}
+
+.app-right .friends.has-requests .header:hover {
+  height:47px;
+}
+
+.app-right .friends .list .row {
+  transition:0.3s;
+}
+
+.app-right .friends .list .row.clickable:hover {
+  background:rgba(46, 204, 113,0.2);
+  border-left:3px solid #2ecc71;
+}
+
+.app-right .friends .list .row.is-offline:hover {
+  background:rgba(231, 76, 60,0.2);
+  border-left:3px solid #e74c3c;
+}
+
+.app-right .friends .list .row .room {
+  transition:0.3s;
+  text-decoration:none !important;
+}
+
+.app-right .friends .list .row:hover .room {
+  top:-10px;
+  padding:10px;
+  height:20px;
+}
+
+.app-right .friends .list .row.clickable:hover .room {
+  background:#2ecc71;
+  color:#fff;
+}
+
+.app-right .friends .list .row.is-offline:hover .room {
+  background:#e74c3c;
+  color:#fff;
+}
+
+/* ---------------------------- CUSTOM ---------------------------- */
+
+/* X-Press*/
+[data-cid^="4006230-"] .msg .from .un {
+  position: relative;
+  left: -1px;
+  padding-left: 18px;
+  background-image: url('http://i.imgur.com/eM22HbZ.png');
+  background-repeat: no-repeat;
+  background-position: 0px center;
+  background-size: 16px auto;
+}
